@@ -1,20 +1,18 @@
-#
-#
+# Vagrant Minikube for Hyper-V and Virtualbox
 Vagrant.configure("2") do |config|
   # VM definitions
   servers=[
       {
         :hostname => "minikube",
-        :box => "centos/7",
         :memory => "4096",
 		    :cpu => "4"
       }
     ]
 	
+  # 
   servers.each do |machine|
-    #
    config.vm.define machine[:hostname] do |node|
-	  node.vm.box = machine[:box]
+	  node.vm.box = "centos/7"
 	  node.vm.synced_folder ".", "/vagrant"
     node.vm.provider "hyperv" do |hv_node|
       hv_node.memory=machine[:memory]
@@ -30,7 +28,7 @@ Vagrant.configure("2") do |config|
 		  vb.name = machine[:hostname]
 	   end 	 
    
-    # Script to inject to Vagrant VM
+    # Update box and install ansible
     $script=<<-SCRIPT
       sudo yum -y update
       sudo yum -y install epel-release   
