@@ -27,7 +27,7 @@
 
 # Installing specific minikube version
 
-    Check the ansible playbook, ansible_local provision section, extra_vars. 
+    Check the Vagrantfile, ansible_local provision section, extra_vars. 
 
 # Notes
 
