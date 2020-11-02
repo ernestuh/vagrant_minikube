@@ -1,4 +1,4 @@
-# Vagrant box with minikube installed using Centos 7 official Vagrant box
+# Minikube installed using Centos 7 official Vagrant box
 
 # Windows (Tested in Windows 10 Pro)
 
