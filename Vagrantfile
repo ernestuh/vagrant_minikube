@@ -42,13 +42,13 @@ Vagrant.configure("2") do |config|
     node.vm.provision "file", source: "install-minikube.yml", destination: "install-minikube.yml"
     node.vm.provision "ansible_local" do |ansible|
      ansible.playbook = "install-minikube.yml"
-	 ansible.extra_vars = {
-			minikube_version: "1.13.1",
-			docker_version: "19.03.13",
-			kubectl_version: "1.19.2",
-			helm_version: "3.3.4",
-			kubetail_version: "1.6.12"
-	 }
+	    ansible.extra_vars = {
+			  minikube_version: "1.13.1",
+			  docker_version: "19.03.13",
+			  kubectl_version: "1.19.2",
+			  helm_version: "3.3.4",
+			  kubetail_version: "1.6.12"
+	    }
     end
    end	
   end 
